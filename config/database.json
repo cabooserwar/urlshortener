@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "superpwd",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "database": "urlshortener"
+  },
+
+  "test": {
+    "driver": "pg",
+    "user": "postgres",
+    "password": "superpwd",
+    "host": "127.0.0.1",
+    "port": "5432",
+    "database": "urlshortener"
+  },
+
+  "prod": {
+    "driver": "pg",
+    "user": {"ENV": "PRODUCTION_USERNAME"},
+    "password": {"ENV": "PRODUCTION_PASSWORD"},
+    "host": "127.0.0.1",
+    "port": "5432",
+    "database": "urlshortener"
+  }
+
+}

@@ -1,0 +1,41 @@
+================ React Native Config =====================
+
+For the react native config file, create a file called "ConfigMode.js" inside of the config folder (at the root of the react native project).
+Inside this file, add this:
+--------------------
+var Configs = require('./dev_randy.json'); 
+
+
+function getConfigMode() {
+  return Configs
+}
+
+var ConfigMode = getConfigMode()
+
+
+module.exports = ConfigMode;
+---------------------
+replace './dev_randy.json' with whichever config build you would like to use (located in config folder).  
+
+When using config.js, remember that a default inside of config.js MUST exist in order for you to overwrite it in the config json. First add default, then add override in the json file.
+
+
+Then, when you want to use a config, require the config file, then read from config.VARNAME and you're all set!
+
+
+============ NODE configs =================
+npm install nconf --save
+
+we can use nconf with overrides, arguments, environment vars, specific files, and defaults, in order from highest priority to lowest (user can define the priority order)
+
+
+============================================
+SETTING UP DEBUG.KEYSTORE
+
+reference these:
+https://github.com/lelandrichardson/react-native-maps/blob/master/docs/installation.md
+https://developers.google.com/maps/documentation/android-api/signup#release-cert
+
+run this command to generate debug.keystore automatically.
+You should probably just use the one randy already has? it'll be in the git top level. you have to move it to ~/.android (or whatever the windows equivalent is)
+keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android

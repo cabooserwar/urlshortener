@@ -1,0 +1,26 @@
+start postgres:
+  sudo su postgres
+login to postgres with user
+  sudo su - <postgres_user>
+
+launch psql:
+  psql <optional_db_name>
+
+creat users:
+  CREATE USER yourname WITH SUPERUSER PASSWORD 'yourpassword';
+create database:
+  CREATE DATABASE my_postgres_db OWNER postgres_user;
+
+
+list users:
+  \du
+
+start service:
+  service postgresql restart
+
+pgadmin3
+
+
+"rekindle2";
+USERNAME = "postgres";
+PASSWORD = "superpwd";

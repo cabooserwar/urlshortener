@@ -1,0 +1,20 @@
+npm install db-migrate --save
+npm install db-migrate-pg --save
+
+==========================================
+configuration file:
+https://db-migrate.readthedocs.io/en/latest/Getting%20Started/configuration/
+found at config/database.json
+
+NOTE: we must use --config config/database.json in order to point to directory config is in if it's not in current directory
+
+
+=====================================
+create migrations versions:
+https://db-migrate.readthedocs.io/en/latest/Getting%20Started/usage/
+./node_modules/db-migrate/bin/db-migrate create add_num_urls  --config config/database.json  
+
+===================================
+RUNNNING MIGRATIONS:
+db-migrate up
+db-migrate up 20111219 (run all migrations created before dec 19 2011)

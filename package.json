@@ -1,0 +1,26 @@
+{
+  "name": "urlshortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cabooserwar/urlshortener.git"
+  },
+  "author": "randy song",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cabooserwar/urlshortener/issues"
+  },
+  "homepage": "https://github.com/cabooserwar/urlshortener#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "db-migrate": "^0.10.0-beta.15",
+    "db-migrate-pg": "^0.1.10",
+    "express": "^4.14.0",
+    "nconf": "^0.8.4"
+  }
+}
