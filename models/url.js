@@ -28,6 +28,12 @@ url.findShortURL = function(long_url, callback) {
   });
 }
 
+url.findLongURL = function(id, callback) {
+  db.query("SELECT long_url FROM urls WHERE (url_id = $1)", [id], function(err, result){
+    callback(err, result);
+  })
+}
+
 
 
 module.exports = url;

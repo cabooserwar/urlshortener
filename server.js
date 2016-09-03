@@ -60,6 +60,26 @@ app.post('/api/shorten', function(req, res) {
 
 //route to redirect user to long url given short url
 app.get('/:encoded_id', function(req, res) {
+  var id = base_endecoder.decode(req.params.encoded_id);
+
+  console.log('encoded id is ' + req.params.encoded_id);
+
+  console.log('result id is ' + id);
+
+  url.findLongURL(id, function(err, result) {
+    if(err) {
+      console.log(err);
+    } else if(result.rows.length) {
+      var result_url = result.rows[0].long_url;
+      if(result_url.includes('http://'))
+        res.redirect(result_url);
+      else
+        res.redirect('http://' + result_url);
+    } else {
+      console.log('failed to redirect, redirecting to ' + config.get('nodeServer'));
+      res.redirect(config.get('nodeServer'));
+    }
+  })
 
 });
 
